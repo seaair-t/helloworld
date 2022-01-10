@@ -1,8 +1,9 @@
 name: Test Build
 
 on:
-  pull_request:
-    paths-ignore:
+  # pull_request:
+ push:
+   paths-ignore:
       - '**.md'
 
 jobs:
@@ -13,21 +14,21 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - arch: aarch64_cortex-a53
-            target: bcm27xx-bcm2710
-            tag: sdk-bcm27xx_bcm2710
+          #- arch: aarch64_cortex-a53
+          #  target: bcm27xx-bcm2710
+          #  tag: sdk-bcm27xx_bcm2710
 
-          - arch: arm_cortex-a7_neon-vfpv4
-            target: ipq40xx-generic
-            tag: sdk-ipq40xx_generic
+          # - arch: arm_cortex-a7_neon-vfpv4
+          #  target: ipq40xx-generic
+          #  tag: sdk-ipq40xx_generic
 
           - arch: mipsel_24kc
             target: ramips-mt7621
             tag: sdk-ramips_mt7621
 
-          - arch: x86_64
-            target: x86-64
-            tag: sdk-x86_64
+          #- arch: x86_64
+          # target: x86-64
+          #  tag: sdk-x86_64
 
     steps:
       - uses: actions/checkout@v2
