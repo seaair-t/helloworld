@@ -4,9 +4,7 @@ on:
   pull_request:
     paths-ignore:
       - '**.md'
-    branches:
-      - master
-      
+          
 jobs:
   build:
     name: Test ${{ matrix.arch }}
